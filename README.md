@@ -1,4 +1,4 @@
-#  Simple CRUD Angular Usin Simple Configuration Angular && FireBase 
+#  Simple CRUD Angular Using Angular 6 && FireBase
 
  Url Demo : https://zedtarik.github.io/EmployeeCRUD/
 
