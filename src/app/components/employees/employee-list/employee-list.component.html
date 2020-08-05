@@ -1,0 +1,24 @@
+<div class="card border-dark mb-3">
+  <div class="card-header">List Employees</div>
+  <div class="card-body">
+    <div *ngIf="employees.length > 0">
+      <table class="table table-bordered table-hover">
+        <ng-container *ngFor="let employee of employees  | slice:0:5;">
+          <tr>
+            <td style="width: 25px;">
+              <a (click)="onEdit(employee)" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+            <td>{{employee.fullName}}</td>
+            <td>{{employee.position}}</td>
+            <td>
+              <a (click)="onDelete(employee.$key)" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+    <div *ngIf="employees.length == 0 ">
+      <h3 class="text-center">Data Not Found</h3>
+    </div>
+  </div>
+</div>

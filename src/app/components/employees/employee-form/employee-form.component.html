@@ -1,0 +1,48 @@
+<div class="card border-dark mb-3">
+  <div class="card-header">{{EmployeeCRUD}}</div>
+  <div class="card-body">
+    <form #EmployeeForm="ngForm" (ngSubmit)="OnSubmitForm(EmployeeForm)" class="from-horizontal" autocomplete="off">
+      <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="employeeService.SelectedEmployee.$key">
+
+      <div class="form-group row">
+        <label for="fullName" class="col-sm-3 col-form-label">Full Name</label>
+        <div class="col-sm-9">
+          <input required type="text" class="form-control" name="fullName" #fullName="ngModel" [(ngModel)]="employeeService.SelectedEmployee.fullName"
+            placeholder="FullName">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="office" class="col-sm-3 col-form-label">Office</label>
+        <div class="col-sm-9">
+          <input required type="text" class="form-control" name="office" #office="ngModel" [(ngModel)]="employeeService.SelectedEmployee.office"
+            placeholder="Office">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="position" class="col-sm-3 col-form-label">Position</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="position" #position="ngModel" [(ngModel)]="employeeService.SelectedEmployee.position"
+            placeholder="Position">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="salary" class="col-sm-3 col-form-label">Salary</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="salary" #salary="ngModel" [(ngModel)]="employeeService.SelectedEmployee.salary"
+            placeholder="Salary">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-9 offset-3">
+          <button type="submit" [disabled]="EmployeeForm.invalid" class="btn btn-outline-info">Save</button>
+          <button style="margin: 10px;" (click)="ResetFormEmployee(EmployeeForm)" type="button" class="btn btn-outline-danger">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
